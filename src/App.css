@@ -1,0 +1,255 @@
+/* Reset styles for consistent appearance */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #FFFF00;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove the constraints from the container */
+.container {
+  background-color: #fff8d4;
+  padding: 20px;
+  border: none;
+  border-radius: 0; /* Remove the border-radius to make it cover the full width */
+  height: 100%;
+  width: 100%; /* Make the container cover full width */
+}
+
+/* Full width header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 50px; /* Extra padding for better spacing */
+  border-bottom: 2px solid #d3d3d3; /* Add a subtle border */
+}
+
+/* Adjust logo and greeting to look better in full-width */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo-section h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
+
+.greeting {
+  font-size: 18px;
+  color: black;
+  margin-top: 10px;
+}
+
+/* Flexbox layout for date, day, and time section */
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  border-radius: 0; /* Remove rounded corners */
+  margin-bottom: 20px;
+}
+
+.info div {
+  background-color: #ffcc6e;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+.info .date {
+  margin-right: 10px;
+  background-color: #ffe79f;
+}
+
+.info .day {
+  margin-right: 10px;
+}
+
+.info .time {
+  background-color: #ffcc6e;
+}
+
+/* Adjust buttons to full width and better spacing */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Spacing between buttons */
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #d3d3d3; /* Border to separate sections */
+}
+
+.buttons button {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.blue-button {
+  background-color: #0095ff;
+  color: white;
+}
+
+.gray-button {
+  background-color: #d3d3d3;
+  color: black;
+}
+
+/* Flight table section */
+.flight-table {
+  background-color: #303030;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #303030;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.status.on-time {
+  color: #00FF00;
+}
+
+/* Add Flight Form Section */
+.add-flight-form {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffcc6e;
+  border-radius: 10px;
+}
+
+.add-flight-form input,
+.add-flight-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
+}
+
+/* Add flight button at the bottom */
+.add-flight-button {
+  display: block;
+  align-self: center;
+  width: 100%;
+  background-color: #ffa500;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+.remove-flight-table, .update-flight-status-table {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #303030;
+  color: white;
+}
+
+.remove-flight-table select, .update-flight-status-table select {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #d3d3d3;
+  color: black;
+}
+/* src/App.css */
+.login-container {
+  background-color: #fff8d4;
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-container input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.login-container button {
+  padding: 10px;
+  background-color: #0095ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .add-flight-form input,
+  .add-flight-form select {
+    width: 100%;
+  }
+
+  
+  
+}
