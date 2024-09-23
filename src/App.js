@@ -33,61 +33,24 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Buttons from './components/Buttons';
-import FlightTable from './components/FlightTable';
-import RemoveFlightTable from './components/RemoveFlightTable';
-import UpdateFlightStatusTable from './components/UpdateFlightStatusTable';
 import LoginPage from './components/LoginPage';
 import PrivateRoute from './components/PrivateRoute';
-import Info from './components/Info';
-import AddFlightForm from './components/AddFlightForm';
+import LandingPage from './components/LandingPage'; // Import the LandingPage
 import './App.css';
-import { useSelector } from 'react-redux';
-
 function App() {
-  const showAddFlightForm = useSelector(state => state.dashboard.showAddFlightForm);
-  const showFlightTable = useSelector(state => state.dashboard.showFlightTable);
-  const showRemoveFlightTable = useSelector(state => state.dashboard.showRemoveFlightTable);
-  const showUpdateFlightStatusTable = useSelector(state => state.dashboard.showUpdateFlightStatusTable);
-
   return (
     <Router>
-      <Header />
-      <Info />
-      <Buttons />
-
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route
           path="/"
           element={
             <PrivateRoute>
-              <div className="container">
-                {showAddFlightForm && <AddFlightForm />} {/* Conditionally render Add Flight form */}
-                {showFlightTable && <FlightTable />} {/* Conditionally render View Flights table */}
-                {showRemoveFlightTable && <RemoveFlightTable />} {/* Conditionally render Remove Flights table */}
-                {showUpdateFlightStatusTable && <UpdateFlightStatusTable />} {/* Conditionally render Update Flight Status table */}
-              </div>
+              <LandingPage /> {/* Use LandingPage for authenticated users */}
             </PrivateRoute>
           }
         />
-        <Route
-          path="/remove"
-          element={
-            <PrivateRoute>
-              <RemoveFlightTable />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/update-status"
-          element={
-            <PrivateRoute>
-              <UpdateFlightStatusTable />
-            </PrivateRoute>
-          }
-        />
+        {/* Additional routes can be added here if needed */}
       </Routes>
     </Router>
   );

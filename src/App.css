@@ -178,6 +178,8 @@ tbody td {
   cursor: pointer;
   color: white;
 }
+
+/* Remove and Update Flight Tables */
 .remove-flight-table, .update-flight-status-table {
   margin-top: 20px;
   padding: 10px;
@@ -192,7 +194,8 @@ tbody td {
   background-color: #d3d3d3;
   color: black;
 }
-/* src/App.css */
+
+/* Login Page Styles */
 .login-container {
   background-color: #fff8d4;
   width: 400px;
@@ -200,6 +203,11 @@ tbody td {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid black;
+}
+
+.login-container h1 {
+  text-align: center; /* Center the headline */
+  margin-bottom: 20px; /* Space below the headline */
 }
 
 .login-container form {
@@ -246,10 +254,13 @@ tbody td {
   }
 
   .add-flight-form input,
-  .add-flight-form select {
+  .add-flight-form select,
+  .login-container input,
+  .login-container button {
     width: 100%;
   }
-
   
-  
+  .login-container {
+    width: 90%; /* Make login form responsive */
+  }
 }

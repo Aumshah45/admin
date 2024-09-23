@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/authSlice'; // Assuming you will create the login action
-
+import '../App.css'; 
 const LoginPage = () => {
   const [airplaneCode, setAirplaneCode] = useState('');
   const [password, setPassword] = useState('');
