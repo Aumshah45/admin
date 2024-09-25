@@ -7,36 +7,45 @@
 }
 
 body {
-  background-color: #FFFF00;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #fffbd8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Remove the constraints from the container */
+/* Styling for time and date in the info section */
+.info .time,
+.info .date {
+  background-color: #FFD54F;
+  color: #000;
+  padding: 10px 50px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.info .date {
+  margin-left: 0;
+}
+
+/* Container styling */
 .container {
-  background-color: #fff8d4;
+  margin: 20px auto;
   padding: 20px;
-  border: none;
-  border-radius: 0; /* Remove the border-radius to make it cover the full width */
-  height: 100%;
-  width: 100%; /* Make the container cover full width */
+  max-width: 950px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Full width header */
+/* Header styling */
 .header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px 50px; /* Extra padding for better spacing */
-  border-bottom: 2px solid #d3d3d3; /* Add a subtle border */
-}
-
-/* Adjust logo and greeting to look better in full-width */
-.logo-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 20px 50px;
+  border-bottom: 2px solid #d3d3d3;
 }
 
 .logo-section h1 {
@@ -51,12 +60,12 @@ body {
   margin-top: 10px;
 }
 
-/* Flexbox layout for date, day, and time section */
+/* Flexbox layout for the info section */
 .info {
   display: flex;
   justify-content: space-around;
   padding: 15px;
-  border-radius: 0; /* Remove rounded corners */
+  border-radius: 0;
   margin-bottom: 20px;
 }
 
@@ -69,27 +78,14 @@ body {
   color: black;
 }
 
-.info .date {
-  margin-right: 10px;
-  background-color: #ffe79f;
-}
-
-.info .day {
-  margin-right: 10px;
-}
-
-.info .time {
-  background-color: #ffcc6e;
-}
-
-/* Adjust buttons to full width and better spacing */
+/* Buttons styling */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Spacing between buttons */
+  gap: 15px;
   margin-bottom: 20px;
   padding: 10px 0;
-  border-bottom: 2px solid #d3d3d3; /* Border to separate sections */
+  border-bottom: 2px solid #d3d3d3;
 }
 
 .buttons button {
@@ -111,7 +107,7 @@ body {
   color: black;
 }
 
-/* Flight table section */
+/* Flight table styling */
 .flight-table {
   background-color: #303030;
   padding: 20px;
@@ -164,7 +160,7 @@ tbody td {
   border: 1px solid #d3d3d3;
 }
 
-/* Add flight button at the bottom */
+/* Add flight button */
 .add-flight-button {
   display: block;
   align-self: center;
@@ -179,70 +175,15 @@ tbody td {
   color: white;
 }
 
-/* Remove and Update Flight Tables */
-.remove-flight-table, .update-flight-status-table {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #303030;
-  color: white;
-}
-
-.remove-flight-table select, .update-flight-status-table select {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #d3d3d3;
-  color: black;
-}
-
-/* Login Page Styles */
-.login-container {
-  background-color: #fff8d4;
-  width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid black;
-}
-
-.login-container h1 {
-  text-align: center; /* Center the headline */
-  margin-bottom: 20px; /* Space below the headline */
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-container label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.login-container input {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-
-.login-container button {
-  padding: 10px;
-  background-color: #0095ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Stack info section vertically */
   .info {
     flex-direction: column;
     align-items: center;
   }
 
+  /* Stack buttons vertically */
   .buttons {
     flex-direction: column;
     align-items: center;
@@ -253,14 +194,21 @@ tbody td {
     margin-bottom: 10px;
   }
 
+  /* Full width input fields for the add flight form */
   .add-flight-form input,
-  .add-flight-form select,
-  .login-container input,
-  .login-container button {
+  .add-flight-form select {
     width: 100%;
   }
-  
-  .login-container {
-    width: 90%; /* Make login form responsive */
+
+  /* Adjust flight table to fit smaller screens */
+  table,
+  .flight-table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Adjust header padding for smaller screens */
+  .header {
+    padding: 15px 20px;
   }
 }
